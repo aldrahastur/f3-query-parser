@@ -1,7 +1,8 @@
 <?php
 
 namespace F3QueryParser;
-class SortController extends BaseController
+
+class SortController
 {
     public function generateSort($options, $sort)
     {

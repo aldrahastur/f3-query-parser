@@ -1,7 +1,7 @@
 <?php
 
 namespace F3QueryParser;
-class FilterController extends BaseController
+class FilterController
 {
     public function generateFilter($options, $filter)
     {
