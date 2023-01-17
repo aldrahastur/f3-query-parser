@@ -1,6 +1,6 @@
 {
   "name": "aldrahastur/f3-query-parser",
-  "description": "handle models in fat-free framework",
+  "description": "parse an query string for f3 sql mapper",
   "type": "libary",
   "license": "MIT",
   "authors": [
