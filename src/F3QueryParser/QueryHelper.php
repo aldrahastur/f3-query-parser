@@ -2,8 +2,6 @@
 
 namespace F3QueryParser;
 
-use BaseController;
-
 class QueryHelper extends BaseController
 {
     function parseUrl($url) : array
