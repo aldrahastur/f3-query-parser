@@ -8,7 +8,7 @@ class SortController
     {
         if(is_array(explode(',', $sort))) {
             $sortExpression = '';
-            foreach ($sort as $item) {
+            foreach (explode(',', $sort) as $item) {
                 if(str_contains($sort, '-')) {
                     $sortValue = str_replace('-', '', $sort).' DESC';
                 }
