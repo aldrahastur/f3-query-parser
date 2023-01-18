@@ -10,7 +10,7 @@ class FilterController
         $filterValues = [];
 
         foreach ($filter as $key => $value) {
-            if(is_array(explode(',', $value))) {
+            if(count(explode(',', $value)) > 1) {
                 $counter = 1;
                 foreach (explode(',', $value) as $item) {
                     if ($filterExpression == '') {
@@ -18,9 +18,11 @@ class FilterController
                     } else {
                         $filterExpression .= ' OR '.$key .' LIKE :'.$key.$counter;
                     }
-                    $filterValues[':' . $key . $counter] = $item;
+                    $filterValues[':' . $key . $counter] = '%'.$item.'%';
                     $counter ++;
                 }
+
+                $filterExpression = '('.$filterExpression.')';
             }
             else {
                 if ($filterExpression == '') {
@@ -28,7 +30,7 @@ class FilterController
                 } else {
                     $filterExpression .= ' AND '.$key .' LIKE :'.$key;
                 }
-                $filterValues[':' . $key] = $value;
+                $filterValues[':' . $key] = '%'.$value.'%';
             }
         }
 
